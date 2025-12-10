@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+     <style type="text/tailwindcss"></style>
+    <title>2-dars</title>
+</head>
+<body class="bg-[#040f8f]">
+    <header  class="py-[20px] text-[32px] text-bold text-[#FEBA17] border-b-1 border-[#FEBA17] shadow-md shadow-[#FEBA17]">
+        <div class="containers flex items-center justify-between">
+            <h2 class="text-[#FEBA17]">Countries</h2>
+            <div class="flex items-center gap-[15px]">
+                <button class="bg-[#FEBA17] rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/heart.png" alt="" width="35" height="35"><span class="text-black">0</span></button>
+                <button class="bg-[#FEBA17] rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/bookmark.png" alt="" width="35" height="35"><span class="text-black">0</span></button>
+                <button><img class="w-[40px] h-[40px] cursor-pointer" src="./images/moon.png" alt="" width="40" height="40"></button>
+            </div>
+        </div>
+    </header>
+
+
+<main>
+    <section class=" pt-[100px]">
+        <div class="containers">
+            <div class="flex items-center justify-between">
+                 <input class="input border-[1px] border-white text-[20px] text-bold text-[#FEBA17] rounded-[20px] px-[10px] py-[5px]" type="text" placeholder="Searching...">
+                 <select class="country-select border-[1px] border-white text-[20px] text-bold text-[#FEBA17] rounded-[20px] px-[10px] py-[5px] w-[200px]">
+                    <option selected value="all">All</option>
+                 </select>
+            </div>
+            <ul class="country-list pt-[100px] pb-[100px] overflow-hidden grid grid-cols-4 gap-[15px]">
+            </ul>
+        </div>
+    </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/country.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
