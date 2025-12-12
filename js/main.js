@@ -1,6 +1,10 @@
 let elCountries = document.querySelector(".country-list")
 let elSelect = document.querySelector(".country-select")
 let elInpit = document.querySelector(".input")
+let elLikeBtn = document.querySelector(".like-btn")
+let elSavedBtn = document.querySelector(".saved-btn")
+let elModalWrapper = document.querySelector(".modal-wrapper")
+let elInnerWrapper = document.querySelector(".inner-wrapper")
 
 
 
@@ -12,11 +16,6 @@ function selectCountry(arr, list){
       }
       return prevValue
     },[])
-  
-    
-
-
-
          countryRes.forEach(item =>{
           let elOption = document.createElement("option")
           elOption.textContent = item
@@ -35,9 +34,9 @@ elSelect.addEventListener("change", (evt)=>{
    renderCountry(selectlist, elCountries)
  }
 })
-
-
 // select end
+
+
 
 // input start
 elInpit.addEventListener("input", (evt)=>{
@@ -65,9 +64,9 @@ function renderCountry(arr, list){
                         <p><strong>Region:</strong> ${item.region}</p>
                     </div>
                     <div class="pl-[10px] pt-[20px] pb-[5px]">
-                    <button><img class="w-[35px] mr-[19px] cursor-pointer" src="./images/love.png"/></button>
-                    <button><img class="w-[35px]  mr-[19px] cursor-pointer" src="./images/save-instagram.png"/></button>
-                    <button><img class="w-[35px]  mr-[19px] cursor-pointer" src="./images/plus.png"/></button> 
+                    <button><img onclick="likeBtnClick(${item.id})" class="w-[35px]  mr-[19px] cursor-pointer" src="${item.active ? './images/love1.png' : './images/love.png'}"/></button>
+                    <button><img onclick="savedBtnClick(${item.id})" class="w-[35px]  mr-[19px] cursor-pointer" src="${item.saved ? './images/bookmark.png' : './images/save-instagram.png'}"/></button>
+                    <button><img onclick="MorehandleClick${item.id})" class="w-[35px]  mr-[19px] cursor-pointer" src="./images/plus.png"/></button> 
                     <button><img class="w-[35px]  mr-[19px] cursor-pointer" src="./images/rotation.png"/></button>
                     <button><img class="w-[35px]  mr-[19px] cursor-pointer" src="./images/delete.png"/></button>
 
@@ -76,6 +75,42 @@ function renderCountry(arr, list){
                 </li>` 
         list.appendChild(elItem)
 });
+elLikeBtn.children[1].textContent = countries.filter(item => item.active).length
+elSavedBtn.children[1].textContent = countries.filter(item => item.saved).length
 }
 renderCountry(countries, elCountries)
 // render country end
+
+
+// Like start 
+function likeBtnClick(id){
+  const likeBtn = countries.find(item => item.id == id)
+  likeBtn.active = !likeBtn.active;
+  renderCountry(countries, elCountries)
+}
+elLikeBtn.addEventListener("click", () => {
+  let likelist = countries.filter(item => item.active)
+  renderCountry(likelist, elCountries)
+})
+// Like end
+
+
+// Saved start
+function savedBtnClick(id){
+  const savedBtn = countries.find(item => item.id == id)
+  savedBtn.saved = !savedBtn.saved;
+  renderCountry(countries, elCountries)
+}
+elSavedBtn.addEventListener("click", () => {
+  let savedlist = countries.filter(item => item.saved)
+  renderCountry(savedlist, elCountries)
+})
+// Saved end
+
+// More start
+function MorehandleClick(id){
+  const moreClick = countries.find(item => item.id == id)
+  console.log(moreClick);
+  
+}
+// More end
