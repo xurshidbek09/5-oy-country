@@ -1,5 +1,53 @@
+:root{
+    --clr-gold:#FEBA17;
+    --clr-blue:#020954;
+}
 .containers{
     width: 1440px;
     margin: 0 auto;   
     padding: 0 20px;
+}
+.dark{
+    --clr-gold:#020954;
+    --clr-blue: #FEBA17;
+}
+body{
+    background-color: var(--clr-gold);
+}
+.title{
+    color: var(--clr-blue);
+}
+.button{
+    background-color: var(--clr-blue);
+}
+.render-item{
+    background-color: var(--clr-blue);
+}
+.render-item-text{
+    color: var(--clr-gold);
+}
+.search{
+    color: var(--clr-blue);
+}
+.span{
+    color: var(--clr-gold)
+}
+.more{
+    color: var(--clr-blue);
+}
+.modal{
+    background-color: var(--clr-gold);
+}
+.input{
+    color: var(--clr-blue);
+}
+.create{
+    color: var(--clr-gold);
+    background-color: var(--clr-blue);
+}
+.update{
+    color: var(--clr-blue);
+}
+.delete{
+    color: var(--clr-blue);
 }

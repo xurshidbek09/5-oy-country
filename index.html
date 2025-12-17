@@ -7,14 +7,16 @@
      <style type="text/tailwindcss"></style>
     <title>2-dars</title>
 </head>
-<body class="bg-[#040f8f]">
-    <header  class="py-[20px] text-[32px] text-bold text-[#FEBA17] border-b-1 border-[#FEBA17] shadow-md shadow-[#FEBA17]">
+<body>
+    <header  class="py-[20px] text-[32px] text-bold border-b-1 border-[#040f8f] shadow-md shadow-[#040f8f]">
         <div class="containers flex items-center justify-between">
-            <h2 class="text-[#FEBA17]">Countries</h2>
+            <h2 class="title">Countries</h2>
             <div class="flex items-center gap-[15px]">
-                <button class="like-btn bg-[#FEBA17] rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/heart.png" alt="" width="35" height="35"><span class="text-black">0</span></button>
-                <button class="saved-btn bg-[#FEBA17] rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/bookmark.png" alt="" width="35" height="35"><span class="text-black">0</span></button>
-                <button><img class="w-[40px] h-[40px] cursor-pointer" src="./images/moon.png" alt="" width="40" height="40"></button>
+                <button class="like-btn bg-[#040f8f] button rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/heart.png" alt="" width="35" height="35"><span class="span">0</span></button>
+                <button class="saved-btn bg-[#040f8f] button rounded-[20px] flex items-center gap-[15px] px-[10px]"><img class="w-[35px] h-[35px] cursor-pointer" src="./images/bookmark.png" alt="" width="35" height="35"><span class="span">0</span></button>
+                <button onclick="handleCreateBtn()"><img class="w-[40px] h-[40px] cursor-pointer" src="./images/create.png" alt="" width="40" height="40"></button>
+                <button><img onclick="modeClick()" class="w-[40px] h-[40px] cursor-pointer" src="./images/moon.png" alt="" width="40" height="40"></button>
+
             </div>
         </div>
     </header>
@@ -24,19 +26,19 @@
     <section class="pt-[100px]">
         <div class="containers">
             <div class="flex items-center justify-between">
-                 <input class="input border-[1px] border-white text-[20px] text-bold text-[#FEBA17] rounded-[20px] px-[10px] py-[5px]" type="text" placeholder="Searching...">
-                 <select class="country-select border-[1px] border-white text-[20px] text-bold text-[#FEBA17] rounded-[20px] px-[10px] py-[5px] w-[200px]">
+                 <input class="input border-[1px] search text-[20px] text-bold rounded-[20px] px-[10px] py-[5px]" type="text" placeholder="Searching...">
+                 <select class="country-select border-[1px] search text-[20px] text-bold rounded-[20px] px-[10px] py-[5px] w-[200px]">
                     <option selected value="all">All</option>
                  </select>
             </div>
-            <ul class="country-list pt-[100px] pb-[100px] overflow-hidden grid grid-cols-4 gap-[15px]">
+            <ul class="country-list pt-[100px] pb-[100px] overflow-hidden grid grid-cols-4 gap-[40px]">
             </ul>
         </div>
-        <!-- <div id="wrapper" class="modal-wrapper flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 duration-300 scale-[1] bg-[#00000097]">
-            <div class="inner-wrapper w-[500px] h-[300px] bg-white absolute p-5 rounded-[5px]">
+        <div id="wrapper" class="modal-wrapper flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 duration-300 scale-[0] bg-[#00000097]">
+            <div class="inner-wrapper w-[700px] modal h-[400px] absolute p-5 rounded-[5px] ">
                  
             </div>
-        </div> -->
+        </div>
     </section>
 </main>
 
