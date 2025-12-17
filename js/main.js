@@ -135,13 +135,14 @@ function likeBtnClick(id){
   const likeBtn = countries.find(item => item.id == id)
   likeBtn.active = !likeBtn.active;
   renderCountry(countries, elCountries)
+  set("countries", countries)
 }
 elLikeBtn.addEventListener("click", () => {
   let likelist = countries.filter(item => item.active)
   renderCountry(likelist, elCountries)
 })
 
-set("countries", countries)
+
 // Like end
 
 
@@ -150,6 +151,7 @@ function savedBtnClick(id){
   const savedBtn = countries.find(item => item.id == id)
   savedBtn.saved = !savedBtn.saved;
   renderCountry(countries, elCountries)
+  set("countries", countries)
 }
 elSavedBtn.addEventListener("click", () => {
   let savedlist = countries.filter(item => item.saved)
@@ -203,6 +205,7 @@ function deleteClick(id){
 const deletebtn = countries.findIndex(item => item.id == id)
 countries.splice(deletebtn, 1)
 renderCountry(countries, elCountries)
+set("countries", countries)
 showModal()
 
 }
@@ -290,6 +293,7 @@ let Updatecountry = countries.find(item => item.id == id);
 
 
 renderCountry(countries, elCountries);
+set("countries", countries)
 showModal()    
   })
 }
